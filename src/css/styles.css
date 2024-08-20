@@ -1,12 +1,6 @@
-/**
-  |============================
-  | include css partials with
-  | default @import url()
-  |============================
-*/
 @import url('./reset.css');
-@import url('./vite-promo.css');
-@import url('./header.css');
+@import 'izitoast/dist/css/iziToast.min.css';
+@import 'simplelightbox/dist/simple-lightbox.min.css';
 
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -22,4 +16,157 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* CSS - LOADER */
+.loader {
+  width: 96px;
+  box-sizing: content-box;
+  height: 48px;
+  background: #fff;
+  border-color: #de3500;
+  border-style: solid;
+  border-width: 2px 2px 50px 2px;
+  border-radius: 100%;
+  position: relative;
+  animation: 3s yinYang linear infinite;
+}
+.loader:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: #fff;
+  border: 18px solid #de3500;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  box-sizing: content-box;
+}
+.loader:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #de3500;
+  border: 18px solid #fff;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  box-sizing: content-box;
+}
+@keyframes yinYang {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader.active {
+  display: none;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding-top: 36px;
+  padding-bottom: 32px;
+}
+
+.input-search {
+  padding-left: 8px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  width: 272px;
+  height: 40px;
+  background: #ffffff;
+}
+
+.input-search::placeholder {
+  padding: 8px;
+  color: #808080;
+  opacity: 0.5;
+}
+
+.input-search:hover {
+  border: 1px solid #000;
+}
+
+.input-search:active {
+  border: 3px solid #4e75ff;
+}
+
+.form-submit {
+  font-weight: 500;
+  color: #fff;
+  border-radius: 8px;
+  border: none;
+  padding: 8px 16px;
+  width: 91px;
+  height: 40px;
+  background: #4e75ff;
+}
+
+.form-submit {
+  background: #6c8cff;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+.gallery-item {
+  width: 360px;
+  height: 200px;
+  overflow: hidden;
+  border: 1px solid #808080;
+}
+
+.gallery-link {
+  height: 252px;
+}
+
+.gallery-image {
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 152px;
+}
+
+.container-description {
+  display: flex;
+  justify-content: space-around;
+  margin: 4px 0;
+}
+
+.container-description-img {
+  text-align: center;
+}
+
+.title-description-img {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33333;
+  color: #2e2f42;
+}
+
+.description-img {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 2;
+  color: #2e2f42;
 }
